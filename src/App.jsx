@@ -18,9 +18,11 @@ import { ErrorElement } from './Components'
 import { loader as LandingLoader } from './Pages/Landing'
 import { loader as SingleProductLoader } from './Pages/SingleProduct'
 import { loader as ProductsLoader } from './Pages/Products'
+import { loader as CheckoutLoader } from './Pages/Checkout'
 // actions
 import { action as registerAction } from './Pages/Register'
 import { action as loginAction } from './Pages/Login'
+import { action as checkoutAction } from './Components/CheckoutForm'
 
 import { store } from './store'
 const router = createBrowserRouter([
@@ -74,6 +76,8 @@ const router = createBrowserRouter([
       {
         path: '/checkout',
         element: <Checkout />,
+        loader: CheckoutLoader(store),
+        action: checkoutAction(store),
       },
     ],
   },
