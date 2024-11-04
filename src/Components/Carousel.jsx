@@ -38,7 +38,7 @@ const Carousel = ({ autoSlideInterval }) => {
     <div className=" h-[350px]  ">
       {/* Images required for sliding */}
       <div
-        className=" w-full h-full rounded-xl transition-all ease-linear duration-700"
+        className=" w-full h-full rounded-xl transition-all ease-in duration-700"
         style={{
           backgroundImage: `url(${carouselImages[currentIndex]})`,
           backgroundPosition: 'center',
@@ -64,7 +64,7 @@ const Carousel = ({ autoSlideInterval }) => {
             // <span className="text-4xl text-red-400 ">&#8226;</span>
             <div
               key={imageIndex}
-              className={`rounded-full h-3 w-3 bg-black cursor-pointer transition ease-in-out delay-150 ${
+              className={`rounded-full h-3 w-3 bg-black cursor-pointer transition ease-in delay-150 ${
                 currentIndex === imageIndex ? 'scale-125  ' : 'bg-opacity-50'
               }`}
               onClick={() => goToSlide(imageIndex)}
